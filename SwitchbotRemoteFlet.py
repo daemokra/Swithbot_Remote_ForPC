@@ -62,8 +62,7 @@ class SwitchBotRemote(ft.UserControl):
             )
         )
 
-        return ft.WindowDragArea(
-            ft.Container(
+        return ft.Container(
                 margin=0,
                 padding=0,
                 alignment=ft.alignment.center,
@@ -71,6 +70,7 @@ class SwitchBotRemote(ft.UserControl):
                     controls = [
                         ft.Row(
                             controls=[
+                                ft.WindowDragArea(ft.Container(ft.Icon(name=ft.icons.DRAG_INDICATOR, size=20), on_hover=lambda _: None)),
                                 self.ac_display,
                                 self.input_temperture,
                                 ft.IconButton(ft.icons.CLOSE, on_click=lambda _: self.page.window_close())
@@ -79,7 +79,6 @@ class SwitchBotRemote(ft.UserControl):
                         ]
                 )
             )
-        )
 
 
     def get_mode_icon(self):
