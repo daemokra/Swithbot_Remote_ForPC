@@ -60,7 +60,7 @@ class SwitchBotRemote(ft.UserControl):
         # 運転モード選択
 
         # 運転ON/OFFSwitch
-        self.switch_power = ft.Switch(value=True if self.main_ac.state == 'on' else False)
+        self.switch_power = ft.Switch(value=True if self.main_ac.state == 'on' else False, on_change=self.on_changed_switch_power)
 
         return ft.Container(
                 margin=0,
@@ -102,6 +102,12 @@ class SwitchBotRemote(ft.UserControl):
         self.update()
         if self.switch_power.value == True:
             self.main_ac.turn_on()
+
+    def on_changed_switch_power(self, e):
+        if e.control.value == True:
+            self.main_ac.turn_on()
+        else:
+            self.main_ac.turn_off()
 
 def main(page: ft.Page):
     page.title = "Remote"
