@@ -1,12 +1,12 @@
 from dotenv import load_dotenv
 import os
-from switchbot.switchbot import SwitchbotRemote
+from switchbotpy import SwitchBotPy
 
 load_dotenv()
 TOKEN  = os.getenv('TOKEN')
 SECRET = os.getenv('SECRET')
 
-switchbot = SwitchbotRemote(token=TOKEN, secret=SECRET, nonce='' ,version='v1.1')
+switchbot = SwitchBotPy(token=TOKEN, secret=SECRET, nonce='' ,version='v1.1')
 
 aircon = switchbot.get_airconditioners()
 aircon[0].temperature = '19'

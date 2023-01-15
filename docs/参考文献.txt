@@ -1,0 +1,6 @@
+https://dev.classmethod.jp/articles/switchbot-control-by-api/
+https://qiita.com/loftkun/items/443c02aaf8b718f42d68
+https://github.com/jonghwanhyeon/python-switchbot
+https://dev.classmethod.jp/articles/switchbot-control-by-api/
+https://expy-style.net/excel/vba-switchbot-api-command-generator/
+https://chasuke.com/switchbotapi/
