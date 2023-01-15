@@ -2,16 +2,7 @@ import os
 from dotenv import load_dotenv
 from switchbotpy import SwitchBotPy
 import flet as ft
-"""
-        aircon = switchbot.get_airconditioners()
-        main_ac = aircon[0]
-        #main_ac.temperature = 16
-        #main_ac.mode        = 'heat'
-        #main_ac.speed       = 'low'
-        #result = aircon[0].turn_on(16,'heat','auto')
-        result = aircon[0].turn_on(17,'heat','auto')
-        print(result)
-"""
+
 class SwitchBotRemote(ft.UserControl):
     def __init__(self, page: ft.Page):
         super().__init__()
@@ -40,7 +31,7 @@ class SwitchBotRemote(ft.UserControl):
                             ft.Text(value=str(self.main_ac.temperature)+'℃', size=15),
                             self.ac_mode_icon,
                             ft.Icon(name=ft.icons.MODE_FAN_OFF_OUTLINED, size=15),
-                            ft.Text(value=str(self.main_ac.mode), size=10),
+                            ft.Text(value=str(self.main_ac.speed), size=10),
                         ]
                     )
                 ]
