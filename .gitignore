@@ -1,0 +1,6 @@
+.*
+!/.gitignore
+.gitattributes
+*.json
+__pycache__
+*.xlsx
