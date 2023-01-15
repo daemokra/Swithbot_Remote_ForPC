@@ -30,6 +30,8 @@ class SwitchBotRemote(ft.UserControl):
             border_radius = ft.border_radius.all(10),
             padding = 5,
             margin  = 5,
+            height = 30,
+            width = 130,
             bgcolor=ft.colors.WHITE12,
             content = ft.Column(
                 controls=[
