@@ -7,6 +7,7 @@ class SwitchBotRemote(ft.UserControl):
     def __init__(self, page: ft.Page):
         super().__init__()
         self.page = page
+        self.page.on_keyboard_event = self.on_keyboard
     def build(self):
         load_dotenv()
         TOKEN  = os.getenv('TOKEN')
@@ -81,6 +82,12 @@ class SwitchBotRemote(ft.UserControl):
             return ft.icons.SUNNY
         if self.main_ac == 'cool':
             return ft.icons.AC_UNIT
+
+    def on_keyboard(self,e: ft.KeyboardEvent):
+        print(e)
+        if e.key == "D" and e.ctrl:
+            self.page.show_semantics_debugger = not self.page.show_semantics_debugger
+            self.page.update()
 
 def main(page: ft.Page):
     page.title = "Remote"
